@@ -1,3 +1,5 @@
+" let tim pope do his magic
+execute pathogen#infect()
 " allow loading of plugins and indentation files based on filetype
 filetype plugin indent on
 
@@ -15,7 +17,8 @@ nnoremap <leader>erc :tabedit $MYVIMRC<cr>
 nnoremap <leader>src :source $MYVIMRC<cr>
 
 """"""""""""""""""""""""""""""""""
-" BASIC VIM SETTINGS """"""""""""""""""""""""""""""""""
+" BASIC VIM SETTINGS
+""""""""""""""""""""""""""""""""""
 " maintain tab indent
 set autoindent
 " allow backspacing over all the things in insert mode
@@ -44,16 +47,21 @@ set relativenumber
 " show whitespace characters
 set list
 set listchars=eol:¬,tab:>\ ,trail:~,extends:>,precedes:<
+nnoremap <leader>lc :set list!<cr>
 
 augroup vimrcEx
         autocmd!
         autocmd FileType text setlocal textwidth=78
 augroup end
 
-nnoremap <leader>lc :set list!<cr>
+""""""""""""""""""""""""""""""""""
+" PLUGIN-SPECIFIC KEY BINDINGS
+""""""""""""""""""""""""""""""""""
+let g:ctrlp_map = '<leader>f'
+
 " TODO:
 "   colourscheme
-"   pathogen command-t, vim-surround
+"   vim-surround
 "   open files in current directory
 "   setup language environments for:
 "       - c/c++
