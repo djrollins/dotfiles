@@ -15,8 +15,7 @@ nnoremap <leader>erc :tabedit $MYVIMRC<cr>
 nnoremap <leader>src :source $MYVIMRC<cr>
 
 """"""""""""""""""""""""""""""""""
-" BASIC VIM SETTINGS
-""""""""""""""""""""""""""""""""""
+" BASIC VIM SETTINGS """"""""""""""""""""""""""""""""""
 " maintain tab indent
 set autoindent
 " allow backspacing over all the things in insert mode
@@ -28,17 +27,23 @@ set softtabstop=4
 set expandtab
 " make searches dynamic
 set incsearch
+" show position in file
+set ruler
+" inplace autocomplete menu
+set wildmenu
 " always show status bar and tab bar
 set laststatus=2
 set showtabline=2
-" current window is always at least 79 chars wide
+" current window is always at least 79x5
 set winwidth=79
+set winheight=5
+set winminheight=5
 " show line numbers relative to current line
 set number
 set relativenumber
 " show whitespace characters
 set list
-set listchars=eol:¬,tab:>-,trail:~,extends:>,precedes:<
+set listchars=eol:¬,tab:>\ ,trail:~,extends:>,precedes:<
 
 augroup vimrcEx
         autocmd!
@@ -47,12 +52,8 @@ augroup end
 
 nnoremap <leader>lc :set list!<cr>
 " TODO:
-"   remainder of sensible vim + grb config
-"   whitespace characters
 "   colourscheme
-"   aliases?
-"   pathogen
-"   command-t, vim-surround
+"   pathogen command-t, vim-surround
 "   open files in current directory
 "   setup language environments for:
 "       - c/c++
@@ -60,4 +61,3 @@ nnoremap <leader>lc :set list!<cr>
 "       - apex (yuck)
 "       - haskell?
 "       - lisp (or use emacs like a normal person?)
-
