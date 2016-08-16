@@ -28,9 +28,12 @@ set backspace=indent,eol,start
 set smarttab
 set tabstop=4
 set softtabstop=4
+set shiftwidth=4
 set expandtab
 " make searches dynamic
 set incsearch
+" highlight current line
+set cursorline
 " show position in file
 set ruler
 " inplace autocomplete menu
