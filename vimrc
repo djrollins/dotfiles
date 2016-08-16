@@ -49,7 +49,6 @@ set winminheight=5
 set number
 set relativenumber
 " show whitespace characters
-set list
 set listchars=eol:¬,tab:>\ ,trail:~,extends:>,precedes:<
 nnoremap <leader>lc :set list!<cr>
 
