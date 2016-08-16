@@ -4,7 +4,8 @@ execute pathogen#infect()
 filetype plugin indent on
 
 syntax enable
-colorscheme elflord
+set background=light
+colorscheme solarized
 
 let mapleader=","
 " TODO: figure out a localleader
@@ -59,9 +60,6 @@ augroup end
 """"""""""""""""""""""""""""""""""
 let g:ctrlp_map = '<leader>f'
 
-" TODO:
-"   colourscheme
-"   vim-surround
 "   open files in current directory
 "   setup language environments for:
 "       - c/c++
