@@ -63,6 +63,13 @@ augroup vimrcEx
         autocmd FileType text setlocal textwidth=78
 augroup end
 
+" edit file in same directory as current file
+cnoremap %% <C-R>=fnameescape(expand('%:h')).'/'<cr>
+nmap <leader>ee :edit %%
+nmap <leader>se :split %%
+nmap <leader>ve :vsplit %%
+nmap <leader>te :tabedit %%
+
 """"""""""""""""""""""""""""""""""
 " PLUGIN-SPECIFIC KEY BINDINGS
 """"""""""""""""""""""""""""""""""
