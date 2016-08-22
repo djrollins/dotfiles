@@ -1,3 +1,9 @@
 [user]
 	name = Daniel J. Rollins
 	email = daniel@djrollins.com
+[color]
+    ui = auto
+[alias]
+    l = "!. ~/.githelpers && pretty_git_log"
+[merge]
+    tool = vimdiff
