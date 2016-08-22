@@ -70,6 +70,12 @@ nmap <leader>se :split %%
 nmap <leader>ve :vsplit %%
 nmap <leader>te :tabedit %%
 
+" unmap directional arrows
+map <left> <nop>
+map <right> <nop>
+map <up> <nop>
+map <down> <nop>
+
 """"""""""""""""""""""""""""""""""
 " PLUGIN-SPECIFIC KEY BINDINGS
 """"""""""""""""""""""""""""""""""
