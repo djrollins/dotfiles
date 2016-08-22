@@ -20,6 +20,8 @@ nnoremap <leader>src :source $MYVIMRC<cr>
 """"""""""""""""""""""""""""""""""
 " BASIC VIM SETTINGS
 """"""""""""""""""""""""""""""""""
+" prevent vim from clobbering the scrollback buffer
+set t_ti= t_te=
 " maintain tab indent
 set autoindent
 " allow backspacing over all the things in insert mode
