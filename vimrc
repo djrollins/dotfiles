@@ -14,8 +14,10 @@ let mapleader=","
 nnoremap \ ,
 
 " quick loading and sourcing of vimrc
-nnoremap <leader>erc :tabedit $MYVIMRC<cr>
-nnoremap <leader>src :source $MYVIMRC<cr>
+nnoremap <leader>rce :tabedit $MYVIMRC<cr>
+nnoremap <leader>rcs :source $MYVIMRC<cr>
+" resource vimrc on save
+autocmd BufWritePost .vimrc source $MYVIMRC
 
 """"""""""""""""""""""""""""""""""
 " BASIC VIM SETTINGS
