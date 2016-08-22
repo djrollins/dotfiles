@@ -70,6 +70,9 @@ nmap <leader>se :split %%
 nmap <leader>ve :vsplit %%
 nmap <leader>te :tabedit %%
 
+" enable spell-checker
+nnoremap <silent> <leader>sp :set spell!<CR>
+
 " unmap directional arrows
 map <left> <nop>
 map <right> <nop>
