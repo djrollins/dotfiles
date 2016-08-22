@@ -47,6 +47,8 @@ set showtabline=2
 set winwidth=79
 set winheight=5
 set winminheight=5
+" always some lines above and below the cursor
+set scrolloff=3
 " show line numbers relative to current line
 set number
 set relativenumber
