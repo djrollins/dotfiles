@@ -5,7 +5,7 @@ filetype plugin indent on
 
 syntax enable
 set background=light
-colorscheme solarized
+colorscheme PaperColor
 
 let mapleader=","
 " TODO: figure out a localleader

@@ -9,12 +9,8 @@ autoload -U promptinit
 promptinit
 prompt steeef
 
-# colorise ls by default
-alias ls="ls -G"
-# bsd(osx) colors format
-LSCOLORS="ExGxBxDxCxEgEdxbxgxcxd"
-# linux colors format
-LS_COLORS="di=1;34:ln=1;36:so=1;31:pi=1;33:ex=1;32:bd=1;34;46:cd=1;34;43:su=0;41:sg=0;46:tw=0;42:ow=0;43"
+# fix terminal vim colours
+export TERM=xterm-256color
 
 # tidy up command history
 setopt HIST_IGNORE_DUPS
@@ -29,3 +25,17 @@ bindkey "^X^E" edit-command-line
 if [[ $(uname -s) == "Darwin" ]]; then
     alias vim="mvim -v"
 fi
+
+function add_gem_path()
+{
+    if which ruby > /dev/null && which gem > /dev/null; then
+        if [ -d "$HOME/.gem/ruby/2.3.0" ]; then
+            export PATH=$PATH:"$HOME/.gem/ruby/2.3.0/bin"
+        else
+            echo "Ruby version in gem path doesn't exist"
+        fi
+    fi
+}
+
+add_gem_path
+

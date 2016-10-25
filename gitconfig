@@ -4,6 +4,8 @@
 [color]
     ui = auto
 [alias]
-    l = "!. ~/.githelpers && pretty_git_log"
+    l = "!. ~/.vim/githelpers && pretty_git_log"
 [merge]
     tool = vimdiff
+[core]
+	editor = vim
