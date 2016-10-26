@@ -12,6 +12,11 @@ prompt djrollins
 # fix terminal vim colours
 export TERM=xterm-256color
 
+# set editor if it's not set
+if [[ -z "$EDITOR" ]]; then
+    export EDITOR=vim
+fi
+
 # tidy up command history
 setopt HIST_IGNORE_DUPS
 export HISTSIZE=100000
