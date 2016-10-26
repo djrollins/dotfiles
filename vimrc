@@ -46,7 +46,7 @@ set wildmenu
 set laststatus=2
 set showtabline=2
 " current window is always at least 79x5
-set winwidth=79
+set winwidth=84
 set winheight=5
 set winminheight=5
 " always some lines above and below the cursor
@@ -60,7 +60,8 @@ nnoremap <leader>lc :set list!<cr>
 
 augroup vimrcEx
         autocmd!
-        autocmd FileType text setlocal textwidth=78
+        autocmd FileType text setlocal textwidth=80
+        autocmd FileType markdown setlocal textwidth=80
 augroup end
 
 " edit file in same directory as current file
