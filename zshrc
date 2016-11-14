@@ -22,6 +22,10 @@ autoload -U edit-command-line
 zle -N edit-command-line
 bindkey "^X^E" edit-command-line
 
+if [[ $(uname -s) == "Linux" ]]; then
+    alias ls="ls --color=auto"
+fi
+
 if [[ $(uname -s) == "Darwin" ]]; then
     alias vim="mvim -v"
 fi
@@ -31,8 +35,6 @@ function add_gem_path()
     if which ruby > /dev/null && which gem > /dev/null; then
         if [ -d "$HOME/.gem/ruby/2.3.0" ]; then
             export PATH=$PATH:"$HOME/.gem/ruby/2.3.0/bin"
-        else
-            echo "Ruby version in gem path doesn't exist"
         fi
     fi
 }

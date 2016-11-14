@@ -67,9 +67,9 @@ augroup end
 " edit file in same directory as current file
 cnoremap %% <C-R>=fnameescape(expand('%:h')).'/'<cr>
 nmap <leader>ee :edit %%
-nmap <leader>se :split %%
-nmap <leader>ve :vsplit %%
-nmap <leader>te :tabedit %%
+nmap <leader>es :split %%
+nmap <leader>ev :vsplit %%
+nmap <leader>et :tabedit %%
 
 " enable spell-checker
 nnoremap <silent> <leader>sp :set spell!<CR>
