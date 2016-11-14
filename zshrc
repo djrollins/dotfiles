@@ -7,7 +7,7 @@ compinit
 setopt PROMPT_SUBST
 autoload -U promptinit
 promptinit
-prompt steeef
+prompt djrollins
 
 # fix terminal vim colours
 export TERM=xterm-256color

@@ -1,3 +1,9 @@
+# prompt setup derived from steeefs theme:
+# https://github.com/robbyrussell/oh-my-zsh/blob/master/themes/steeef.zsh-theme
+# Modified to update git on every command when inside git repo
+#
+# Original comments:
+#
 # prompt style and colors based on Steve Losh's Prose theme:
 # http://github.com/sjl/oh-my-zsh/blob/master/themes/prose.zsh-theme
 #
@@ -12,6 +18,8 @@ export VIRTUAL_ENV_DISABLE_PROMPT=1
 function virtualenv_info {
     [ $VIRTUAL_ENV ] && echo '('%F{blue}`basename $VIRTUAL_ENV`%f') '
 }
+
+# First time in, update git section of prompt
 PR_GIT_UPDATE=1
 
 setopt prompt_subst
@@ -52,37 +60,30 @@ zstyle ':vcs_info:*:prompt:*' actionformats "${FMT_BRANCH}${FMT_ACTION}"
 zstyle ':vcs_info:*:prompt:*' formats       "${FMT_BRANCH}"
 zstyle ':vcs_info:*:prompt:*' nvcsformats   ""
 
-
-function steeef_preexec {
-    case "$(history $HISTCMD)" in
-        *git*)
-            PR_GIT_UPDATE=1
-            ;;
-        *svn*)
-            PR_GIT_UPDATE=1
-            ;;
-    esac
-}
-add-zsh-hook preexec steeef_preexec
-
 function steeef_chpwd {
     PR_GIT_UPDATE=1
 }
 add-zsh-hook chpwd steeef_chpwd
 
 function steeef_precmd {
-    if [[ -n "$PR_GIT_UPDATE" ]] ; then
+    if [[ -n "$PR_GIT_UPDATE" ]]; then
         # check for untracked files or updated submodules, since vcs_info doesn't
         if git ls-files --other --exclude-standard 2> /dev/null | grep -q "."; then
-            PR_GIT_UPDATE=1
             FMT_BRANCH="(%{$turquoise%}%b%{$hotpink%}!%u%c${PR_RST})"
         else
             FMT_BRANCH="(%{$turquoise%}%b%u%c${PR_RST})"
         fi
+
         zstyle ':vcs_info:*:prompt:*' formats "${FMT_BRANCH} "
 
         vcs_info 'prompt'
-        PR_GIT_UPDATE=
+
+        # if we're in a git repository then continue to update prompt
+        if [[ -d ".git" ]]; then
+            PR_GIT_UPDATE=1
+        else
+            PR_GIT_UPDATE=
+        fi
     fi
 }
 add-zsh-hook precmd steeef_precmd
