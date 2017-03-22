@@ -4,6 +4,8 @@ execute pathogen#infect()
 filetype plugin indent on
 
 syntax enable
+set background=dark
+colorscheme PaperColor
 
 let mapleader=","
 " TODO: figure out a localleader
