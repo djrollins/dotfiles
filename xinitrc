@@ -7,5 +7,10 @@ xset b off
 # enable a decent compositor
 compton -b
 
+# reset background w/ feh if have done before
+if [ -a ~/.fehbg ]; then
+    sh ~/.fehbg
+fi
+
 # start i3
 exec i3

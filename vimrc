@@ -24,6 +24,8 @@ nnoremap <leader>rcs :source $MYVIMRC<cr>
 set t_ti= t_te=
 " maintain tab indent
 set autoindent
+set cindent
+set cinoptions=l1
 " allow backspacing over all the things in insert mode
 set backspace=indent,eol,start
 " tabs as 4 spaces by default
@@ -39,6 +41,7 @@ set hlsearch
 nnoremap <silent> <CR> :nohlsearch<CR><CR>
 " highlight current line
 set cursorline
+" vertical line at 81 columns
 set colorcolumn=81
 " show position in file
 set ruler

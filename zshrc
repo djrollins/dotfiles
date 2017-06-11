@@ -9,7 +9,6 @@ autoload -U promptinit
 promptinit
 prompt djrollins
 
-# fix terminal vim colours
 export TERM=xterm-256color
 
 # set editor if it's not set
@@ -38,11 +37,13 @@ fi
 function add_gem_path()
 {
     if which ruby > /dev/null && which gem > /dev/null; then
-        if [ -d "$HOME/.gem/ruby/2.3.0" ]; then
-            export PATH=$PATH:"$HOME/.gem/ruby/2.3.0/bin"
+        if [ -d "$HOME/.gem/ruby/2.4.0" ]; then
+            export PATH=$PATH:"$HOME/.gem/ruby/2.4.0/bin"
         fi
     fi
 }
 
 add_gem_path
 
+# Use emacs/heretics keybindings
+bindkey -e
