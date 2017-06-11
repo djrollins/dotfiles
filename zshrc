@@ -13,7 +13,7 @@ export TERM=xterm-256color
 
 # set editor if it's not set
 if [[ -z "$EDITOR" ]]; then
-    export EDITOR=vim
+	export EDITOR=vim
 fi
 
 # tidy up command history
@@ -27,20 +27,20 @@ zle -N edit-command-line
 bindkey "^X^E" edit-command-line
 
 if [[ $(uname -s) == "Linux" ]]; then
-    alias ls="ls --color=auto"
+	alias ls="ls --color=auto"
 fi
 
 if [[ $(uname -s) == "Darwin" ]]; then
-    alias vim="mvim -v"
+	alias vim="mvim -v"
 fi
 
 function add_gem_path()
 {
-    if which ruby > /dev/null && which gem > /dev/null; then
-        if [ -d "$HOME/.gem/ruby/2.4.0" ]; then
-            export PATH=$PATH:"$HOME/.gem/ruby/2.4.0/bin"
-        fi
-    fi
+	if which ruby > /dev/null && which gem > /dev/null; then
+		if [ -d "$HOME/.gem/ruby/2.4.0" ]; then
+			export PATH=$PATH:"$HOME/.gem/ruby/2.4.0/bin"
+		fi
+	fi
 }
 
 add_gem_path

@@ -66,10 +66,10 @@ set listchars=eol:¬,tab:>\ ,trail:~,extends:>,precedes:<
 nnoremap <leader>lc :set list!<cr>
 
 augroup vimrcEx
-        autocmd!
-        autocmd FileType text setlocal textwidth=80
-        autocmd FileType markdown setlocal textwidth=80
-        autocmd FileType haskell setlocal nocindent | setlocal expandtab
+	autocmd!
+	autocmd FileType text setlocal textwidth=80
+	autocmd FileType markdown setlocal textwidth=80
+	autocmd FileType haskell setlocal nocindent | setlocal expandtab
 augroup end
 
 " edit file in same directory as current file
@@ -103,10 +103,10 @@ if filereadable(expand("~/.platform_vimrc"))
 	source ~/.platform_vimrc
 endif
 
-"   open files in current directory
-"   setup language environments for:
-"       - c/c++
-"       - rust
-"       - apex (yuck)
-"       - haskell?
-"       - lisp (or use emacs like a normal person?)
+"	open files in current directory
+"	setup language environments for:
+"	- c/c++
+"	- rust
+"	- apex (yuck)
+"	- haskell?
+"	- lisp (or use emacs like a normal person?)

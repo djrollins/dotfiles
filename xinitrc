@@ -9,7 +9,7 @@ compton -b
 
 # reset background w/ feh if have done before
 if [ -a ~/.fehbg ]; then
-    sh ~/.fehbg
+	sh ~/.fehbg
 fi
 
 # start i3
