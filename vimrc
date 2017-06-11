@@ -16,8 +16,6 @@ nnoremap \ ,
 " quick loading and sourcing of vimrc
 nnoremap <leader>rce :tabedit $MYVIMRC<cr>
 nnoremap <leader>rcs :source $MYVIMRC<cr>
-" resource vimrc on save
-autocmd BufWritePost .vimrc source $MYVIMRC
 
 """"""""""""""""""""""""""""""""""
 " BASIC VIM SETTINGS
@@ -33,11 +31,15 @@ set smarttab
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
-set expandtab
 " make searches dynamic
 set incsearch
+" highligh all search occurances
+set hlsearch
+" disable search highlight on enter
+nnoremap <silent> <CR> :nohlsearch<CR><CR>
 " highlight current line
 set cursorline
+set colorcolumn=81
 " show position in file
 set ruler
 " inplace autocomplete menu
@@ -51,6 +53,8 @@ set winheight=5
 set winminheight=5
 " always some lines above and below the cursor
 set scrolloff=3
+" disable linewrap
+set nowrap
 " show line numbers relative to current line
 set number
 set relativenumber
@@ -62,6 +66,7 @@ augroup vimrcEx
         autocmd!
         autocmd FileType text setlocal textwidth=80
         autocmd FileType markdown setlocal textwidth=80
+        autocmd FileType haskell setlocal nocindent | setlocal expandtab
 augroup end
 
 " edit file in same directory as current file
@@ -70,6 +75,10 @@ nmap <leader>ee :edit %%
 nmap <leader>es :split %%
 nmap <leader>ev :vsplit %%
 nmap <leader>et :tabedit %%
+
+" easily switch tabs
+nmap <leader>tn :tabnext<cr>
+nmap <leader>tp :tabprevious<cr>
 
 " enable spell-checker
 nnoremap <silent> <leader>sp :set spell!<CR>
@@ -84,6 +93,12 @@ map <down> <nop>
 " PLUGIN-SPECIFIC KEY BINDINGS
 """"""""""""""""""""""""""""""""""
 let g:ctrlp_map = '<leader>f'
+
+" LOAD PLATFORM-SPECIFIC VIMRC
+
+if filereadable(expand("~/.platform_vimrc"))
+	source ~/.platform_vimrc
+endif
 
 "   open files in current directory
 "   setup language environments for:
