@@ -30,10 +30,6 @@ if [[ $(uname -s) == "Linux" ]]; then
 	alias ls="ls --color=auto"
 fi
 
-if [[ $(uname -s) == "Darwin" ]]; then
-	alias vim="mvim -v"
-fi
-
 function add_gem_path()
 {
 	if which ruby > /dev/null && which gem > /dev/null; then
