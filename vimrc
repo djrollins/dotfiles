@@ -96,6 +96,7 @@ map <down> <nop>
 " PLUGIN-SPECIFIC KEY BINDINGS
 """"""""""""""""""""""""""""""""""
 let g:ctrlp_map = '<leader>f'
+let g:ctrlp_working_path_mode = '0'
 
 " LOAD PLATFORM-SPECIFIC VIMRC
 
