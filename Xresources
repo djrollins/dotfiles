@@ -8,7 +8,7 @@ Xft.antialias: 1
 Xft.rgba: rgb
 
 Xcursor.theme: Oxygen_Zion
-Xcursor.size: 32
+Xcursor.size: 16
 
 ! TERMINAL SPECIFIC
 URxvt.font: xft:inconsolata:size=12

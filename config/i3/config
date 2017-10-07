@@ -146,6 +146,7 @@ new_window pixel 0
 for_window [class="Steam"] floating enable
 for_window [class="GameDev"] floating enable
 for_window [instance="wlc-x11"] floating enable
+for_window [class="Spotify"] floating enable
 
 # default workspace assignments
 assign [class="Steam"] $w9

@@ -9,7 +9,7 @@ autoload -U promptinit
 promptinit
 prompt djrollins
 
-export TERM=xterm-256color
+export TERM=rxvt-unicode-256color
 
 # set editor if it's not set
 if [[ -z "$EDITOR" ]]; then
