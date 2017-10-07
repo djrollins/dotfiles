@@ -1,2 +1,7 @@
 .netrwhist
 vim/spell
+config/chromium
+config/dconf
+config/Trolltech.conf
+config/pulse
+config/spotify
