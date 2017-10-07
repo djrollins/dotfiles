@@ -150,6 +150,7 @@ for_window [class="Spotify"] floating enable
 
 # default workspace assignments
 assign [class="Steam"] $w9
+assign [class="Spotify"] $w8
 
 
 # open sound stuff
