@@ -2,10 +2,11 @@
 	name = Daniel J. Rollins
 	email = daniel@djrollins.com
 [color]
-    ui = auto
+	ui = auto
 [alias]
-    l = "!. ~/.githelpers && pretty_git_log"
+	l = "!. ~/.githelpers && pretty_git_log"
+	exec = "!exec "
 [merge]
-    tool = vimdiff
+	tool = vimdiff
 [core]
 	editor = vim
