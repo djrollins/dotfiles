@@ -9,8 +9,6 @@ autoload -U promptinit
 promptinit
 prompt djrollins
 
-export TERM=rxvt-unicode-256color
-
 # set editor if it's not set
 if [[ -z "$EDITOR" ]]; then
 	export EDITOR=vim
@@ -28,8 +26,10 @@ bindkey "^X^E" edit-command-line
 
 if [[ $(uname -s) == "Linux" ]]; then
 	alias ls="ls --color=auto"
+	export TERM=rxvt-unicode-256color
 elif [[ $(uname -s) == "Darwin" ]]; then
 	alias ls="ls -G"
+	export TERM=xterm-256color
 fi
 
 function add_gem_path()
