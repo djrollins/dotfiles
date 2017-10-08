@@ -1,5 +1,11 @@
+*~
 .netrwhist
 vim/spell
+
+emacs.d/auto-save-list
+emacs.d/bookmarks
+emacs.d/elpa
+
 config/chromium
 config/dconf
 config/Trolltech.conf
