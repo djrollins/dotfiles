@@ -28,6 +28,8 @@ bindkey "^X^E" edit-command-line
 
 if [[ $(uname -s) == "Linux" ]]; then
 	alias ls="ls --color=auto"
+elif [[ $(uname -s) == "Darwin" ]]; then
+	alias ls="ls -G"
 fi
 
 function add_gem_path()
