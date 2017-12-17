@@ -24,8 +24,6 @@ nnoremap <leader>rcs :source $MYVIMRC<cr>
 " set t_ti= t_te=
 " maintain tab indent
 set autoindent
-set cindent
-set cinoptions=l1
 " allow backspacing over all the things in insert mode
 set backspace=indent,eol,start
 " tabs as 4 spaces by default
@@ -67,9 +65,16 @@ nnoremap <leader>lc :set list!<cr>
 
 augroup vimrcEx
 	autocmd!
-	autocmd FileType text setlocal textwidth=80
-	autocmd FileType markdown setlocal textwidth=80
+	autocmd FileType text,markdown setlocal textwidth=79
 	autocmd FileType haskell setlocal nocindent | setlocal expandtab
+
+	" c/c++ indentation options
+	"   l1:  align case block with statement
+	"   g0:  aling public/private labels with bracket
+	"   N-s: align namespace contents to with bracket
+	"   t0:  align function return type and decl if on different lines
+	autocmd FileType c,cpp setlocal cindent cinoptions=l1,g0,N-s,t0
+
 augroup end
 
 " edit file in same directory as current file
