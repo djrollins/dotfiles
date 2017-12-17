@@ -21,7 +21,7 @@ nnoremap <leader>rcs :source $MYVIMRC<cr>
 " BASIC VIM SETTINGS
 """"""""""""""""""""""""""""""""""
 " prevent vim from clobbering the scrollback buffer
-set t_ti= t_te=
+" set t_ti= t_te=
 " maintain tab indent
 set autoindent
 set cindent
