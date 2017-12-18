@@ -12,3 +12,8 @@ config/Trolltech.conf
 config/pulse
 config/spotify
 config/libreoffice
+config/QtProject.conf
+config/Sinew Software Systems
+config/autostart/
+config/gconf
+config/mimeapps.list
