@@ -11,10 +11,8 @@ Xcursor.theme: Oxygen_Zion
 Xcursor.size: 16
 
 ! TERMINAL SPECIFIC
-URxvt.font: xft:inconsolata:size=12
+URxvt.font: xft:Inconsolata\\-g:style=g:pixelsize=16
 URxvt.scrollBar: false
-
-Xterm.font: xft:inconsolata:size=12
 
 !!! TERMINAL COLOURS
 ! special
