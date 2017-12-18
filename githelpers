@@ -19,7 +19,7 @@ AUTHOR="%C(bold blue)<%an>%Creset"
 REFS="%C(bold red)%d%Creset"
 SUBJECT="%s"
 
-FORMAT="$HASH $RELATIVE_TIME	$AUTHOR $REFS $SUBJECT"
+FORMAT="$HASH}$RELATIVE_TIME}$AUTHOR}$REFS $SUBJECT"
 
 ANSI_BLACK='\033[30m'
 ANSI_BLACK_BOLD='\033[0;30;1m'
@@ -46,13 +46,14 @@ show_git_head() {
 }
 
 pretty_git_log() {
-	git log --graph --pretty="tformat:${FORMAT}" $* |
+	git log --color --graph --pretty="tformat:${FORMAT}" $* |
 	# Replace (2 years ago) with (2 years)
 	sed -Ee 's/(^[^<]*) ago\)/\1)/' |
 	# Replace (2 years, 5 months) with (2 years)
 	sed -Ee 's/(^[^<]*), [[:digit:]]+ .*months?\)/\1)/' |
 	# Color merge commits specially
 	sed -Ee "s/(Merge (branch|remote-tracking branch|pull request) .*$)/$(printf $ANSI_RED)\1$(printf $ANSI_RESET)/" |
+	column -t -s '}' |
 	# Page only if we're asked to.
 	if [ -n "$GIT_NO_PAGER" ]; then
 		cat
