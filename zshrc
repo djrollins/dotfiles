@@ -30,10 +30,18 @@ autoload -U edit-command-line
 zle -N edit-command-line
 bindkey "^X^E" edit-command-line
 
-# osx/BSD coreutils don't have all the options
-# add gnu versions from brew if they exist
-function osx_add_gcoreutils_to_path()
-{
+# platform-specific options
+function _zshrc_linux_setup() {
+	alias ls="ls --color=auto"
+	export TERM=rxvt-unicode-256color
+}
+
+function _zshrc_osx_setup() {
+	export TERM=xterm-256color
+	alias ls="ls -G"
+
+	# osx/BSD coreutils don't have all the options
+	# add gnu versions from brew if they exist
 	local gcoreutils="/usr/local/opt/coreutils/libexec/gnubin"
 	if [[ -d $gcoreutils ]]; then
 		export PATH=$gcoreutils:$PATH
@@ -41,15 +49,13 @@ function osx_add_gcoreutils_to_path()
 	fi
 }
 
-# platform-specific options
 if [[ $(uname -s) == "Linux" ]]; then
-	alias ls="ls --color=auto"
-	export TERM=rxvt-unicode-256color
+	_zshrc_linux_setup
 elif [[ $(uname -s) == "Darwin" ]]; then
-	export TERM=xterm-256color
-	alias ls="ls -G"
-
-	osx_add_gcoreutils_to_path
+	_zshrc_osx_setup
 fi
 
+# unset private functions so they don't show up in the shell
+unset -f _zshrc_osx_setup
+unset -f _zshrc_linux_setup
 
