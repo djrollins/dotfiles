@@ -5,7 +5,7 @@ filetype plugin indent on
 
 syntax enable
 set background=light
-colorscheme PaperColor
+colorscheme solarized
 
 let mapleader=","
 " TODO: figure out a localleader
@@ -65,8 +65,9 @@ nnoremap <leader>lc :set list!<cr>
 
 augroup vimrcEx
 	autocmd!
-	autocmd FileType text,markdown setlocal textwidth=79
-	autocmd FileType haskell setlocal nocindent | setlocal expandtab
+	autocmd FileType markdown setlocal textwidth=79 expandtab
+	autocmd FileType text setlocal textwidth=79
+	autocmd FileType haskell setlocal nocindent expandtab smarttab ts=2 sts=2 sw=2
 
 	" c/c++ indentation options
 	"   l1:  align case block with statement
