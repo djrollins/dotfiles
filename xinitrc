@@ -5,7 +5,7 @@ xrdb -merge ~/.Xresources
 xset b off
 
 # enable a decent compositor
-compton -b
+#compton -b
 
 # reset background w/ feh if have done before
 if [ -a ~/.fehbg ]; then
