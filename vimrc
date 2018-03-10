@@ -4,8 +4,8 @@ execute pathogen#infect()
 filetype plugin indent on
 
 syntax enable
-set background=light
-colorscheme solarized
+set background=dark
+colorscheme gruvbox
 
 let mapleader=","
 " TODO: figure out a localleader
@@ -20,8 +20,6 @@ nnoremap <leader>rcs :source $MYVIMRC<cr>
 """"""""""""""""""""""""""""""""""
 " BASIC VIM SETTINGS
 """"""""""""""""""""""""""""""""""
-" prevent vim from clobbering the scrollback buffer
-" set t_ti= t_te=
 " maintain tab indent
 set autoindent
 " allow backspacing over all the things in insert mode
@@ -61,20 +59,23 @@ set number
 set relativenumber
 " show whitespace characters
 set listchars=eol:¬,tab:>\ ,trail:~,extends:>,precedes:<
+" show byte count in visual mode
+set showcmd
+
 nnoremap <leader>lc :set list!<cr>
 
 augroup vimrcEx
 	autocmd!
 	autocmd FileType markdown setlocal textwidth=79 expandtab
 	autocmd FileType text setlocal textwidth=79
-	autocmd FileType haskell setlocal nocindent expandtab smarttab ts=2 sts=2 sw=2
+	autocmd FileType haskell,cabal setlocal nocindent expandtab smarttab ts=2 sts=2 sw=2
 
 	" c/c++ indentation options
 	"   l1:  align case block with statement
 	"   g0:  aling public/private labels with bracket
 	"   N-s: align namespace contents to with bracket
 	"   t0:  align function return type and decl if on different lines
-	autocmd FileType c,cpp setlocal cindent cinoptions=l1,g0,N-s,t0
+	autocmd FileType c,cpp setlocal cindent cinoptions=l1,g0,N-s,t0,(s
 
 augroup end
 

@@ -33,7 +33,6 @@ bindkey "^X^E" edit-command-line
 # platform-specific options
 function _zshrc_linux_setup() {
 	alias ls="ls --color=auto"
-	export TERM=rxvt-unicode-256color
 }
 
 function _zshrc_osx_setup() {

@@ -17,3 +17,6 @@ config/Sinew Software Systems
 config/autostart/
 config/gconf
 config/mimeapps.list
+config/VirtualBox
+config/pavucontrol.ini
+config/htop

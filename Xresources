@@ -9,10 +9,3 @@ Xft.rgba: rgb
 
 Xcursor.theme: Oxygen_Zion
 Xcursor.size: 16
-
-! TERMINAL SPECIFIC
-URxvt.font: xft:Inconsolata\\-g:style=g:pixelsize=16
-URxvt.scrollBar: false
-
-!!! TERMINAL COLOURS
-#include ".Xresources.d/solarized"

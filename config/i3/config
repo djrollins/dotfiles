@@ -9,6 +9,7 @@
 #
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
+gaps inner 5
 set $mod Mod4
 
 set $font inconsolata-g
