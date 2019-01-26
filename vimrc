@@ -24,11 +24,6 @@ nnoremap <leader>rcs :source $MYVIMRC<cr>
 set autoindent
 " allow backspacing over all the things in insert mode
 set backspace=indent,eol,start
-" tabs as 4 spaces by default
-set smarttab
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4
 " make searches dynamic
 set incsearch
 " highligh all search occurances
@@ -81,14 +76,10 @@ augroup end
 
 " edit file in same directory as current file
 cnoremap %% <C-R>=fnameescape(expand('%:h')).'/'<cr>
-nmap <leader>ee :edit %%
-nmap <leader>es :split %%
-nmap <leader>ev :vsplit %%
-nmap <leader>et :tabedit %%
 
 " easily switch tabs
-nmap <leader>tn :tabnext<cr>
-nmap <leader>tp :tabprevious<cr>
+nnoremap <leader>tn :tabnext<cr>
+nnoremap <leader>tp :tabprevious<cr>
 
 " enable spell-checker
 nnoremap <silent> <leader>sp :set spell!<CR>
@@ -99,11 +90,15 @@ map <right> <nop>
 map <up> <nop>
 map <down> <nop>
 
+" Upper-case current work in insert mode
+imap <c-u> <esc>muviwU`ua
+
 """"""""""""""""""""""""""""""""""
-" PLUGIN-SPECIFIC KEY BINDINGS
+" PLUGIN-SPECIFIC KEY OPTIONS
 """"""""""""""""""""""""""""""""""
 let g:ctrlp_map = '<leader>f'
 let g:ctrlp_working_path_mode = '0'
+
 
 " LOAD PLATFORM-SPECIFIC VIMRC
 
@@ -115,6 +110,5 @@ endif
 "	setup language environments for:
 "	- c/c++
 "	- rust
-"	- apex (yuck)
 "	- haskell?
 "	- lisp (or use emacs like a normal person?)

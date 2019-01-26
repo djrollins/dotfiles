@@ -78,8 +78,8 @@ function steeef_precmd {
 
 	vcs_info 'prompt'
 
-	# if we're in a git repository then continue to update prompt
-	if [[ -d ".git" ]]; then
+	# check if we're up to 2 directories deep into a git repository
+	if [[ -d ".git" || -d "../.git" || -d "../../.git" ]]; then
 		PR_GIT_UPDATE=1
 	else
 		PR_GIT_UPDATE=

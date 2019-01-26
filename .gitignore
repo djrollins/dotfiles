@@ -6,17 +6,4 @@ emacs.d/auto-save-list
 emacs.d/bookmarks
 emacs.d/elpa
 
-config/chromium
-config/dconf
-config/Trolltech.conf
-config/pulse
-config/spotify
-config/libreoffice
-config/QtProject.conf
-config/Sinew Software Systems
-config/autostart/
-config/gconf
-config/mimeapps.list
-config/VirtualBox
-config/pavucontrol.ini
-config/htop
+config/*
