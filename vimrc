@@ -1,5 +1,3 @@
-" let tim pope do his magic
-execute pathogen#infect()
 " allow loading of plugins and indentation files based on filetype
 filetype plugin indent on
 
