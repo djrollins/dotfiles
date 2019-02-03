@@ -4,39 +4,45 @@ Xcursor.size: 16
 URxvt.font: xft:Source Code Pro:size=10, xft:Noto Color Emoji
 URxvt.scrollBar: false
 
+URxvt*cursorBlink: true
+
 ! colours
-URxvt*.foreground:   #c5c8c6
-URxvt*.background:   #1d1f21
-URxvt*.cursorColor:  #c5c8c6
+*background:                      #222D31
+*foreground:                      #d8d8d8
+*fading:                          8
+*fadeColor:                       black
+*cursorColor:                     #1ABB9B
+*pointerColorBackground:          #2B2C2B
+*pointerColorForeground:          #16A085
 
-! black
-URxvt*.color0:       #282a2e
-URxvt*.color8:       #373b41
+!! black dark/light
+*color0:                          #222D31
+*color8:                          #585858
 
-! red
-URxvt*.color1:       #a54242
-URxvt*.color9:       #cc6666
+!! red dark/light
+*color1:                          #ab4642
+*color9:                          #ab4642
 
-! green
-URxvt*.color2:       #8c9440
-URxvt*.color10:      #b5bd68
+!! green dark/light
+*color2:                          #7E807E
+*color10:                         #8D8F8D
 
-! yellow
-URxvt*.color3:       #de935f
-URxvt*.color11:      #f0c674
+!! yellow dark/light
+*color3:                          #f7ca88
+*color11:                         #f7ca88
 
-! blue
-URxvt*.color4:       #5f819d
-URxvt*.color12:      #81a2be
+!! blue dark/light
+*color4:                          #7cafc2
+*color12:                         #7cafc2
 
-! magenta
-URxvt*.color5:       #85678f
-URxvt*.color13:      #b294bb
+!! magenta dark/light
+*color5:                          #ba8baf
+*color13:                         #ba8baf
 
-! cyan
-URxvt*.color6:       #5e8d87
-URxvt*.color14:      #8abeb7
+!! cyan dark/light
+*color6:                          #1ABB9B
+*color14:                         #1ABB9B
 
-! white
-URxvt*.color7:       #707880
-URxvt*.color15:      #c5c8c6
+!! white dark/light
+*color7:                          #d8d8d8
+*color15: #f8f8f8
