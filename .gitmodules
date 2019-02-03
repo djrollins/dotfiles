@@ -7,3 +7,6 @@
 [submodule "vim/pack/base/start/gruvbox"]
 	path = vim/pack/base/start/gruvbox
 	url = https://github.com/morhetz/gruvbox
+[submodule "vim/pack/base/start/ale"]
+	path = vim/pack/base/start/ale
+	url = https://github.com/w0rp/ale
