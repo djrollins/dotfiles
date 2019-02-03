@@ -282,7 +282,7 @@ set_from_resource $term_color15 color15
 # finds out, if available)
 bar {
 	status_command i3status
-	separator_symbol " / "
+	separator_symbol "|"
 	position bottom
 	colors {
 		background #222D31
