@@ -62,8 +62,6 @@ alias free='free -m'                                            # Show sizes in 
 alias gitu='git add . && git commit && git push'
 alias ls='ls --color=auto'
 
-export ZSH_COMPLETION_SCRIPTS_DIR="$HOME/.zsh/completions"
-
 # Theming section  
 autoload -U compinit colors zcalc
 compinit -d
