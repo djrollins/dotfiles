@@ -97,6 +97,22 @@ imap <c-u> <esc>muviwU`ua
 let g:ctrlp_map = '<leader>f'
 let g:ctrlp_working_path_mode = '0'
 
+let wiki_options = {'syntax': 'markdown', 'ext': '.md'}
+let wiki_options.nested_syntaxes = { 'c++': 'cpp' }
+let personal_wiki = copy(wiki_options)
+let personal_wiki.path = "~/vimwiki/personal"
+let g:vimwiki_list = [personal_wiki]
+let g:vimwiki_global_ext = 0
+
+" ale
+let g:ale_completion_enabled = 1
+let g:ale_fixers = {}
+let g:ale_linters = {}
+
+" rustale config
+let g:ale_fixers.rust = ['rustfmt']
+let g:ale_linters.rust = ['rls', 'cargo', 'rustc']
+let g:ale_rust_rls_toolchain = 'stable'
 
 " LOAD PLATFORM-SPECIFIC VIMRC
 
