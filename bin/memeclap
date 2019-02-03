@@ -1,0 +1,3 @@
+#!/bin/bash
+
+echo :clap: $(echo $@ | sed -e 's/ / :clap: /g') :clap:
