@@ -1,12 +1,13 @@
-[submodule "vim/pack/base/start/ctrlp.vim"]
-	path = vim/pack/base/start/ctrlp.vim
-	url = ../../ctrlpvim/ctrlp.vim
 [submodule "vim/pack/base/start/vim-surround"]
 	path = vim/pack/base/start/vim-surround
 	url = ../../tpope/vim-surround
-[submodule "vim/pack/base/start/ale"]
-	path = vim/pack/base/start/ale
-	url = ../../w0rp/ale
-[submodule "vim/pack/base/start/colorizer"]
-	path = vim/pack/base/start/colorizer
-	url = ../../lilydjwg/colorizer
+[submodule "vim/pack/base/start/coc.nvim"]
+	path = vim/pack/base/start/coc.nvim
+	url = ../../neoclide/coc.nvim.git
+	branch = release
+[submodule "vim/pack/base/start/fzf"]
+	path = vim/pack/base/start/fzf
+	url = ../../junegunn/fzf.git
+[submodule "vim/pack/base/opt/vim"]
+	path = vim/pack/base/opt/vim
+	url = ../../challenger-deep-theme/vim.git

@@ -1,13 +1,13 @@
-" allow loading of plugins and indentation files based on filetype
 filetype plugin indent on
-
 syntax enable
-set background=dark
-colorscheme gruvbox
+
+let g:challenger_deep_termcolors = 16
+let g:challenger_deep_terminal_italics = 1
+colorscheme challenger_deep
 
 let mapleader=","
-" TODO: figure out a localleader
-
+" TODO: figure out a local leader
+let mapleader=","
 " remap old leader to old ","
 nnoremap \ ,
 
@@ -36,6 +36,7 @@ set colorcolumn=81
 set ruler
 " inplace autocomplete menu
 set wildmenu
+set completeopt=longest,menu,preview
 " always show status bar and tab bar
 set laststatus=2
 set showtabline=2
@@ -56,22 +57,7 @@ set listchars=eol:¬,tab:>\ ,trail:~,extends:>,precedes:<
 set showcmd
 
 nnoremap <leader>lc :set list!<cr>
-
-augroup vimrcEx
-	autocmd!
-	autocmd FileType markdown setlocal textwidth=79 expandtab
-	autocmd FileType text setlocal textwidth=79
-	autocmd FileType haskell,cabal setlocal nocindent expandtab smarttab ts=2 sts=2 sw=2
-
-	" c/c++ indentation options
-	"   l1:  align case block with statement
-	"   g0:  aling public/private labels with bracket
-	"   N-s: align namespace contents to with bracket
-	"   t0:  align function return type and decl if on different lines
-	autocmd FileType c,cpp setlocal cindent cinoptions=l1,g0,N-s,t0,(s
-
-augroup end
-
+"
 " edit file in same directory as current file
 cnoremap %% <C-R>=fnameescape(expand('%:h')).'/'<cr>
 
@@ -95,25 +81,7 @@ imap <c-u> <esc>muviwU`ua
 " PLUGIN-SPECIFIC KEY OPTIONS
 """"""""""""""""""""""""""""""""""
 let g:ctrlp_map = '<leader>f'
-let g:ctrlp_working_path_mode = '0'
-
-let wiki_options = {'syntax': 'markdown', 'ext': '.md'}
-let wiki_options.nested_syntaxes = { 'c++': 'cpp' }
-let personal_wiki = copy(wiki_options)
-let personal_wiki.path = "~/vimwiki/personal"
-let g:vimwiki_list = [personal_wiki]
-let g:vimwiki_global_ext = 0
-
-" ale
-let g:ale_completion_enabled = 1
-let g:ale_fixers = {}
-let g:ale_linters = {}
-
-" rustale config
-let g:ale_fixers.rust = ['rustfmt']
-let g:ale_linters.rust = ['rls', 'cargo', 'rustc']
-let g:ale_rust_rls_toolchain = 'stable'
-
+"
 " LOAD PLATFORM-SPECIFIC VIMRC
 
 if filereadable(expand("~/.platform_vimrc"))
