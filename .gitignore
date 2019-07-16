@@ -8,3 +8,4 @@ emacs.d/elpa
 
 config/*
 zsh/completions
+zsh/cache
