@@ -56,6 +56,7 @@ set listchars=eol:¬,tab:>\ ,trail:~,extends:>,precedes:<
 " show byte count in visual mode
 set showcmd
 
+set list
 nnoremap <leader>lc :set list!<cr>
 "
 " edit file in same directory as current file

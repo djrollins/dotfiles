@@ -228,3 +228,7 @@ if which starship > /dev/null 2>&1; then
 	unset RPROMPT
 	eval "$(starship init zsh)"
 fi
+
+if [[ -r "~/.dir_colors" ]]; then
+	eval "$(dir_colors ~/.dir_colors)"
+fi

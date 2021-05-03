@@ -1,7 +1,6 @@
 Xcursor.theme: Oxygen_Zion
-Xcursor.size: 16
 
-URxvt.font: xft:Source Code Pro:size=10, xft:Noto Color Emoji
+URxvt.font: xft:Fira Code:size=10, xft:Noto Color Emoji
 URxvt.scrollBar: false
 
 URxvt*cursorBlink: true

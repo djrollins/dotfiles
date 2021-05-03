@@ -25,7 +25,7 @@ bindsym $mod+n border normal
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
 set $font Fira Code
-set $font_size 14
+set $font_size 12
 font pango:$font $font_size
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
@@ -52,8 +52,9 @@ bindsym $mod+Shift+q kill
 # TODO install dmenu_recency
 #bindsym $mod+d exec --no-startup-id dmenu_run -fn '$font-$font_size'
 #bindsym $mod+d exec --no-startup-id dmenu_run -fn '$font-$font_size'
-bindsym $mod+d exec --no-startup-id rofi -dpi 200 -show-icons -show
-bindsym $mod+Shift+d exec --no-startup-id rofi -dpi 200 -show run -show-icons
+bindsym $mod+d exec --no-startup-id rofi -show-icons -show drun
+bindsym $mod+Shift+d exec --no-startup-id rofi -show-icons -show run
+bindsym $mod+Shift+w exec --no-startup-id rofi -show-icons -show window
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.

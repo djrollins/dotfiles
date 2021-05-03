@@ -16,7 +16,7 @@
 	url = ../../junegunn/fzf.vim.git
 [submodule "vim/pack/base/start/vim-fugitive"]
 	path = vim/pack/base/start/vim-fugitive
-	url = git@github.com:tpope/vim-fugitive
+	url = ../../tpope/vim-fugitive
 [submodule "vim/pack/base/start/vim-test"]
 	path = vim/pack/base/start/vim-test
 	url = ../../vim-test/vim-test.git
