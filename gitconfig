@@ -1,6 +1,7 @@
 [user]
 	name = Daniel J. Rollins
 	email = daniel@djrollins.com
+	signingkey = BF1447CC
 [color]
 	ui = auto
 [alias]
@@ -12,3 +13,15 @@
 	tool = vimdiff
 [core]
 	editor = vim
+[pull]
+	ff = on
+
+[includeIf "gitdir:~/projects/iw/"]
+	path = ~/projects/iw/.gitconfig
+[rebase]
+	instructionFormat = (%an <%ae>) %s
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process

@@ -1,0 +1,46 @@
+#! /usr/bin/env bash
+
+APP_NAME="Audio"
+MSG_ID="991049"
+
+function current_volume() {
+	pactl list sinks | grep -E '^\s+Volume:' | awk '{{ print $5 }}' | tr -d '%'
+}
+
+function print_muted() {
+	MUTED=$(pactl list sinks | grep -E '^\s+Mute:' | awk '{{ print $2 }}')
+	if [[ "$MUTED" == "yes" ]]; then
+		echo $1
+	else
+		echo ${2-}
+	fi
+}
+
+function new_volume() {
+	if (( ($(current_volume) + $1) > 100)); then
+		echo 100%
+	else
+		echo $1%
+	fi
+}
+
+function audio_status() {
+	notify_dunst "Volume: $(current_volume)% $(print_muted '(Muted)')"
+}
+
+function audio_volume_down() {
+	pactl set-sink-volume @DEFAULT_SINK@ $(new_volume -5) && audio_status
+}
+
+function audio_volume_up() {
+	pactl set-sink-volume @DEFAULT_SINK@ $(new_volume +5) && audio_status
+}
+
+function audio_mute() {
+	pactl set-sink-mute @DEFAULT_SINK@ toggle \
+		&& notify_dunst "$(print_muted 'Mute' 'Unmute')"
+}
+
+function notify_dunst() {
+	dunstify -a "$APP_NAME" -r $MSG_ID $@
+}

@@ -24,8 +24,8 @@ bindsym $mod+n border normal
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-set $font Source Code Pro
-set $font_size 10
+set $font Fira Code
+set $font_size 14
 font pango:$font $font_size
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
@@ -50,10 +50,10 @@ bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
 # TODO install dmenu_recency
-bindsym $mod+d exec --no-startup-id rofi -modi 'run#window#drun' -show drun
-bindsym $mod+Shift+d exec --no-startup-id rofi -modi 'run#window#drun' -show run
-bindsym $mod+Shift+w exec --no-startup-id rofi -modi 'run#window#drun' -show window
-# bindsym $mod+d exec --no-startup-id dmenu_run -nb '$bg' -nf '$fg' -sf '$bg' -sb '$hl' -fn '$font-$font_size'
+#bindsym $mod+d exec --no-startup-id dmenu_run -fn '$font-$font_size'
+#bindsym $mod+d exec --no-startup-id dmenu_run -fn '$font-$font_size'
+bindsym $mod+d exec --no-startup-id rofi -dpi 200 -show-icons -show
+bindsym $mod+Shift+d exec --no-startup-id rofi -dpi 200 -show run -show-icons
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
@@ -203,8 +203,8 @@ assign [class="Spotify"] $ws8
 for_window [urgent=latest] focus
 
 # open sound stuff
-#bindsym $mod+Shift+m exec --no-startup-id i3-sensible-terminal -e 'alsamixer'
-#for_window [title="alsamixer"] floating enable
+# bindsym $mod+Shift+m exec --no-startup-id i3-sensible-terminal -e 'alsamixer'
+# for_window [title="alsamixer"] floating enable
 bindsym $mod+Shift+m exec --no-startup-id pavucontrol
 for_window [class="Pavucontrol"] floating enable
 

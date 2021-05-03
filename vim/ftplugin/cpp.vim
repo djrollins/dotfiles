@@ -1,7 +1,8 @@
 setlocal tabstop=8
-setlocal softtabstop=2
-setlocal shiftwidth=2
+setlocal softtabstop=4
+setlocal shiftwidth=4
 setlocal expandtab
+
 nmap <silent> [g <Plug>(coc-diagnostic-prev)
 nmap <silent> ]g <Plug>(coc-diagnostic-next)
 
@@ -31,8 +32,8 @@ autocmd CursorHold * silent call CocActionAsync('highlight')
 nmap <leader>rn <Plug>(coc-rename)
 
 " Formatting selected code.
-nmap <leader>f  <Plug>(coc-format)
-vmap <leader>f  <Plug>(coc-format-selected);
+xmap <leader>f  <Plug>(coc-format-selected)
+nmap <leader>f  <Plug>(coc-format-selected)
 
 augroup mygroup
   autocmd!

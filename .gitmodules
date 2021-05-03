@@ -1,13 +1,25 @@
 [submodule "vim/pack/base/start/vim-surround"]
 	path = vim/pack/base/start/vim-surround
 	url = ../../tpope/vim-surround
+[submodule "vim/pack/base/start/colorizer"]
+	path = vim/pack/base/start/colorizer
+	url = ../../lilydjwg/colorizer
 [submodule "vim/pack/base/start/coc.nvim"]
 	path = vim/pack/base/start/coc.nvim
-	url = ../../neoclide/coc.nvim.git
+	url = ../../neoclide/coc.nvim
 	branch = release
-[submodule "vim/pack/base/start/fzf"]
-	path = vim/pack/base/start/fzf
-	url = ../../junegunn/fzf.git
-[submodule "vim/pack/base/opt/vim"]
-	path = vim/pack/base/opt/vim
-	url = ../../challenger-deep-theme/vim.git
+[submodule "vim/pack/base/start/nord-vim"]
+	path = vim/pack/base/start/nord-vim
+	url = ../../arcticicestudio/nord-vim.git
+[submodule "vim/pack/base/start/fzf.vim"]
+	path = vim/pack/base/start/fzf.vim
+	url = ../../junegunn/fzf.vim.git
+[submodule "vim/pack/base/start/vim-fugitive"]
+	path = vim/pack/base/start/vim-fugitive
+	url = git@github.com:tpope/vim-fugitive
+[submodule "vim/pack/base/start/vim-test"]
+	path = vim/pack/base/start/vim-test
+	url = ../../vim-test/vim-test.git
+[submodule "vim/pack/base/start/vim-tmuxify"]
+	path = vim/pack/base/start/vim-tmuxify
+	url = https://github.com/jebaum/vim-tmuxify

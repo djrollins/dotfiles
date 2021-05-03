@@ -2,6 +2,7 @@ setlocal tabstop=8
 setlocal softtabstop=2
 setlocal shiftwidth=2
 setlocal expandtab
+
 nmap <silent> [g <Plug>(coc-diagnostic-prev)
 nmap <silent> ]g <Plug>(coc-diagnostic-next)
 
@@ -31,8 +32,8 @@ autocmd CursorHold * silent call CocActionAsync('highlight')
 nmap <leader>rn <Plug>(coc-rename)
 
 " Formatting selected code.
+vmap <leader>f  <Plug>(coc-format-selected)
 nmap <leader>f  <Plug>(coc-format)
-vmap <leader>f  <Plug>(coc-format-selected);
 
 augroup mygroup
   autocmd!
@@ -51,3 +52,15 @@ nmap <leader>a  <Plug>(coc-codeaction-selected)
 nmap <leader>ac  <Plug>(coc-codeaction)
 " Apply AutoFix to problem on the current line.
 nmap <leader>qf  <Plug>(coc-fix-current)
+
+inoremap <silent><expr> <c-@> coc#refresh()
+
+let test#strategy = 'tmuxify'
+nmap <leader>tn	 :TestNearest<cr>
+nmap <leader>tf	 :TestFile<cr>
+nmap <leader>ta	 :TestSuite<cr>
+nmap <leader>tt	 :TestLast<cr>
+nmap <leader>gt	 :TestVisit<cr>
+
+nnoremap <leader>tr  :execute '!git exec fd --type f \| fzf --query "' . expand('%:t:r') . ' test" --select-1 --exit-0 \| xargs yarn jest'<cr>
+

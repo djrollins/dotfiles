@@ -67,6 +67,8 @@ autoload -U compinit colors zcalc
 compinit -d
 colors
 
+autoload bashcompinit && bashcompinit && complete -C '/usr/bin/aws_completer' aws
+
 # enable substitution for prompt
 setopt prompt_subst
 
@@ -221,3 +223,8 @@ if [[ ! -e "$ZSH_COMPLETIONS_FILE" ]]; then
 	touch "$ZSH_COMPLETIONS_FILE"
 fi
 . "$ZSH_COMPLETIONS_FILE"
+
+if which starship > /dev/null 2>&1; then
+	unset RPROMPT
+	eval "$(starship init zsh)"
+fi
