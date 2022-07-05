@@ -78,8 +78,8 @@ map <down> <nop>
 " Upper-case current work in insert mode
 imap <c-u> <esc>muviwU`ua
 
-nmap <leader>f :GFiles
-nmap <leader><leader>f :Files
+nmap <leader>f :GFiles<cr>
+nmap <leader>F :Files<cr>
 
 let g:netrw_liststyle = 3
 let g:netrw_browse_split = 4
@@ -95,6 +95,8 @@ inoremap <expr><C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<Left>"
 if filereadable(expand("~/.platform_vimrc"))
 	source ~/.platform_vimrc
 endif
+
+autocmd FileType glsl setlocal shiftwidth=2 softtabstop=2 expandtab cindent
 
 "	open files in current directory
 "	setup language environments for:

@@ -142,8 +142,8 @@ bindsym $mod+Ctrl+Shift+Right move workspace to output right
 # to display names or symbols instead of plain workspace numbers you can use
 # something like: set $ws1 1:mail
 #                 set $ws2 2:
-set $ws1 1:
-set $ws2 2:
+set $ws1 1
+set $ws2 2
 set $ws3 3
 set $ws4 4
 set $ws5 5
@@ -226,8 +226,19 @@ for_window [class="Pavucontrol"] floating enable
 #     bindsym Return mode "default"
 #     bindsym Escape mode "default"
 # }
-# resize window (you can also use the mouse for that)
 
+bindsym $mod+0 mode "$mode_system"
+set $mode_system (l)ock, (s)uspend
+mode "$mode_system" {
+    bindsym l exec --no-startup-id i3lock -c 222222, mode "default"
+    bindsym s exec --no-startup-id systemctl suspend, mode "default"
+
+    # exit system mode: "Enter" or "Escape"
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
+# resize window (you can also use the mouse for that)
 mode "resize" {
 	# These bindings trigger as soon as you enter the resize mode
 
@@ -256,6 +267,7 @@ bindsym $mod+r mode "resize"
 # autostart applications
 # TODO look at xps config to see if there are any other programs
 # that should start automatically
+exec --no-startup-id nm-applet
 exec --no-startup-id enpass
 exec --no-startup-id xss-lock i3lock -c 222222
 

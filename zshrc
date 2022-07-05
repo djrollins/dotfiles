@@ -232,3 +232,23 @@ fi
 if [[ -r "~/.dir_colors" ]]; then
 	eval "$(dir_colors ~/.dir_colors)"
 fi
+
+
+#export function nthcommit() {
+#	local n=${1?};
+#
+#	git rev-list master --reverse | \
+#	head -$n | tail -1 | \
+#	xargs git checkout
+#}
+#
+#export function currentcommit() {
+#	git rev-list master --reverse | \
+#	grep --line-number $(git rev-parse HEAD) | \
+#	cut -d ':' -f 1;
+#}
+#
+# 
+#export function nextcommit() {
+#	nthcommit $(($(currentcommit) + 1));
+#}

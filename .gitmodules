@@ -22,4 +22,10 @@
 	url = ../../vim-test/vim-test.git
 [submodule "vim/pack/base/start/vim-tmuxify"]
 	path = vim/pack/base/start/vim-tmuxify
-	url = https://github.com/jebaum/vim-tmuxify
+	url = ../../jebaum/vim-tmuxify
+[submodule "vim/pack/base/start/vim-glsl"]
+	path = vim/pack/base/start/vim-glsl
+	url = ../../tikhomirov/vim-glsl
+[submodule "vim/pack/base/start/vim-scala"]
+	path = vim/pack/base/start/vim-scala
+	url = https://github.com/derekwyatt/vim-scala

@@ -1,7 +1,7 @@
 [user]
 	name = Daniel J. Rollins
 	email = daniel@djrollins.com
-	signingkey = BF1447CC
+	signingkey = 2B06585501904723
 [color]
 	ui = auto
 [alias]
@@ -25,3 +25,12 @@
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
+[init]
+	defaultBranch = main
+[commit]
+	gpgsign = true
+[url "ssh://git@github.com"]
+	insteadOf = https://github.com
+
+[url "https://github.com/rust-lang/crates.io-index"]
+  insteadOf = https://github.com/rust-lang/crates.io-index
